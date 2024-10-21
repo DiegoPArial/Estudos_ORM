@@ -65,6 +65,19 @@ down: desfazer as alterações realizadas pelo up, por exemplo, deletar a tabela
 
 Migrations podem ser utilizadas para controle de versões.
 
+---
+
+## Sequelize x Prisma
+
+Embora o Prisma ORM e o Sequelize resolvam problemas semelhantes, eles funcionam de maneiras muito diferentes.
+
+Sequelize é um ORM tradicional que mapeia tabelas para classes de modelo . Instâncias das classes de modelo então fornecem uma interface para consultas CRUD para um aplicativo em tempo de execução.
+
+Prisma ORM é um novo tipo de ORM que atenua muitos problemas de ORMs tradicionais, como instâncias de modelo inchadas, mistura de lógica de negócios com lógica de armazenamento, falta de segurança de tipo ou consultas imprevisíveis causadas, por exemplo, por carregamento lento.
+
+Ele usa o esquema Prisma para definir modelos de aplicativos de forma declarativa. O Prisma Migrate então permite gerar migrações SQL a partir do esquema Prisma e executá-las no banco de dados. As consultas CRUD são fornecidas pelo Prisma Client, um cliente de banco de dados leve e totalmente seguro para Node.js e TypeScript.
+
+O Prisma ORM permite filtrar uma lista com base em um critério que se aplica não apenas aos modelos da lista que está sendo recuperada, mas a uma relação desse modelo. Sequelize não oferece uma API dedicada para filtros de relação. Você pode obter uma funcionalidade semelhante enviando uma consulta SQL bruta ao banco de dados.
 
 
 
